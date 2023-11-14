@@ -1,0 +1,365 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+nav, .navbar {
+    position: static;
+    background-color: yellow;
+
+}
+
+ul, .navbar ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px; /* Вы можете настроить высоту навигационной строки по своему усмотрению */
+}
+
+li, .navbar li {
+    display: inline;
+}
+
+a, .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    font-family: Impact, fantasy;
+    font-size: 25px;
+    transition: background-color 0.3s ease-out;
+    font-weight: lighter;
+}
+
+a:hover, .navbar a:hover {
+    background-color: #555;
+    color: #ffcc00;
+}
+
+.underline {
+    position: absolute;
+    height: 0px; /* Высота выезжающей строки */
+    background-color: #ffcc00; /* Цвет выезжающей строки */
+    bottom: 0;
+    left: 0;
+    width: 0;
+    transition: width 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.catalog-content {
+    display: none;
+    padding: 0px;
+    transition: display 0.5s ease;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px white;
+    align-items: center;
+}
+
+li.catalog:hover .catalog-content {
+    display: block;
+}
+
+.content {
+    background-color: #5d5c47;
+    padding: 50px;
+    text-align: center;
+    font-size: large;
+    font-family: times new roman, serif;
+}
+
+footer {
+    background-color: #4f4545;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.item, .item11 {
+    flex: 0 0 30%;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.item img, .item11 img11 {
+    max-width: 100%;
+    height: 490px;
+    weight: 480px;
+    display: compact;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.items-center {
+    display: flex;
+    justify-content: center;
+}
+
+.scale {
+    display: inline-block;
+    overflow: hidden;
+    border: 1px ridge #000000;
+}
+
+.scale img {
+    transition: 1s;
+    display: block;
+}
+
+.scale img:hover {
+    transform: scale(1.03);
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 24px; /* Размер для h3 */
+}
+
+h4 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 24px; /* Размер для h4 */
+}
+
+h5 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 24px; /* Размер для h5 */
+}
+
+/* Добавлен стиль для трех точек */
+.menu-icon {
+    cursor: pointer;
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+.menu-icon:hover {
+    color: #ffcc00;
+}
+
+/* Добавлен стиль для выезжающего меню */
+.catalog-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    color: white;
+    width: 70%;
+    max-width: 300px;
+    z-index: 2;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.catalog-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+    transition: background-color 0.3s ease-out;
+}
+
+.catalog-menu a:hover {
+    background-color: #555;
+}
+
+/* Добавлен стиль для контента при открытом меню */
+.menu-opened {
+    overflow: hidden;
+}
+.contacts {
+    background-color: #88886b;
+    padding: 85px;
+    text-align: center;
+    font-family: TAHOMA, serif;
+    font-size: 33px;
+}
+
+@media screen and (max-width: 768px) {
+    /* Добавлен стиль для отображения иконки меню на маленьких экранах */
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar.active ul {
+        display: flex;
+        flex-direction: column;
+    }
+    #gallery {
+        display: flex;
+        overflow: hidden;
+        width: 60%; /* Установим ширину галереи */
+        margin: 20px auto; /* Центрирование галереи */
+        position: relative;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        transition: transform 0.5s ease;
+        border-radius: 10px;
+        overflow: hidden; /* Обрежем углы изображения */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Сохранение пропорций и обрезка изображения по нужным размерам */
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px; /* Увеличим отступы */
+        cursor: pointer;
+        margin-top: 10px; /* Добавим отступ сверху */
+        border-radius: 5px; /* Сделаем кнопки чуть более закругленными */
+    }
+
+    h2, p {
+        margin: 0;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        font-size: 25px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        font-size: 25px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ваш общий стиль CSS */
+
+    #gallery {
+        display: flex;
+        overflow: hidden;
+        width: 60%;
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        transition: transform 0.5s ease;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    h2, p {
+        margin: 0;
+    }
+
+    .contacts {
+        background-color: #88886b;
+        padding: 100px;
+        text-align: center;
+        font-family: Arial Black, serif;
+    }
